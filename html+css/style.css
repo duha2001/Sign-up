@@ -1,0 +1,308 @@
+/* 
+selector {
+    property: value;
+}
+Selectors:
+Tags: p, div, h1, main, a, span
+Class: .demo, .header,.boy
+ID: #container, #footer
+
+Property: color, background-color
+Value: red, orange, yellow 
+ */
+* {
+  box-sizing: border-box;
+}
+html {
+  font-family: "Poppins", sans-serif;
+  font-size: 62.5%;
+  /* 1 rem = 10px */
+}
+p {
+  /* color: value */
+  /*
+     named: red, orange, blue, green
+     hexa: #ffa400, #ff7870, #00aefd, #666666  -> #666 #7cd7cd -> #7cd
+     rgb: rgb(0,0,0), rgb(255,255,255)
+     rgba: rgba(0,0,0,0.5)
+     alpha: opacity 0 -> 1
+      */
+  color: red;
+  color: #ffa400;
+  color: rgb(0, 0, 0);
+  color: rgba(0, 0, 0, 0.5);
+}
+.background {
+  width: 100px;
+  /* height: 100px; */
+  min-height: 100px;
+  background-color: #2979ff;
+  /* overflow-y: auto; */
+}
+.background2 {
+  /* Làm với background cần phải có chiều rộng và chiều cao */
+  background-image: url(./bg1.jpeg);
+  /* width: 100%;
+  height: 1000px; */
+  /* background-position: center center;
+  background-size: cover; 
+  background-repeat: no-repeat;
+  background-attachment: fixed; */
+  /* Rút gọn */
+  background: red url(./bg1.jpeg) no-repeat center center / cover;
+  /* Muốn hình nền không xuất hiện scroll sử dụng đơn vị vh, vw*/
+
+  height: 100vh;
+  width: 100vw;
+  /* width: 100%;  */
+  /* Khác nhau giữa vw và % là % sẽ theo thằng cha chứa nó và vw sẽ full màn hình */
+}
+.wrap {
+  width: 400px;
+}
+
+/* font-size: 100% = 16px */
+/* 1em = 1rem = 16px */
+.em {
+  width: 10em;
+  height: 10em;
+  background-color: #ffa400;
+  font-size: 32px;
+  /* 1em = 32px */
+  /* Là đơn vị sẽ phụ thuộc vào thuộc tính font-size của chính nó hoặc phần tử chứa nó */
+}
+.rem {
+  width: 10rem;
+  height: 10rem;
+  background-color: #2979ff;
+  border: 2px solid black;
+  font-size: 32px;
+  /* Boder: border-width border-style border-color */
+  /* Là đơn vị sẽ phụ thuộc vào thuộc tính font-size của html */
+}
+/* 100% = 16px
+   ?%   = 10px
+   ? = 62.5% ( xét font-size cho thẻ html )
+*/
+
+.margin {
+  width: 14rem;
+  height: 14rem;
+  background-color: red;
+  /* 1 giá trị -> top = right = left = bottom = 20px */
+  /* margin: 20px; */
+  /* 2 giá trị -> top = bottom = 20px; right=left=20px*/
+  /* margin: 20px 40px; */
+  /* 3 giá trị -> top=10px; right=left=20px; bottom=40px */
+  /* margin: 10px 20px 40px; */
+  /* 4 giá trị -> top=10px; right=20px; bottom=30px; left=40px  */
+  /* margin: 10px 20px 30px 40px; */
+  /* margin-bottom: 20px;
+  margin-left: 20px;
+  margin-top: 10px; */
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 10px;
+}
+.boxed {
+  width: 10rem;
+  height: 10rem;
+  border: 5px solid black;
+  background-color: orange;
+  padding: 1rem;
+  /* content-box
+  width = width + padding-left + padding-right + border-left + boder-right
+  100px = 100px + 10px + 10px +10px = 130px
+  height = height + padding-top + padding-bottom + border-top + border-right
+  */
+  /* border-box
+  width = width - padding-left - padding-right - border-left - boder-right
+   */
+}
+/* a {
+  color: white;
+  text-decoration: none;
+  width: 10rem;
+  height: 5rem;
+  padding: 1rem;
+  background-color: yellow;
+  display: inline;
+  display: block;
+  display: inline-block;
+} */
+.font {
+  font-family: "Poppins", sans-serif;
+  color: black;
+  font-size: 16px;
+  text-align: justify;
+  max-width: 300px;
+  line-height: 1.5rem;
+  letter-spacing: 0.4px;
+  /* white-space: nowrap; */
+  /* white-space: nowrap không xuống hàng */
+  overflow: hidden;
+  /* Nếu tràn quá max-width thì ẩn đi */
+  text-overflow: ellipsis;
+  /* Thêm dấu 3 chấm sau dòng chữ */
+  /* Để hiển thị dấu 3 chấm tới hàng thứ 3 */
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 3;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.box {
+  width: 20rem;
+  height: 30rem;
+  background-color: #ffa400;
+  color: black;
+  font-size: 16px;
+  border: 4px solid yellow;
+  padding: 10px;
+  margin: 15px;
+  border-radius: 4px;
+  text-align: center;
+}
+.text3 {
+  max-width: 500px;
+  font-size: 16px;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.text3-second {
+  margin-top: 10px;
+  max-width: 10rem;
+  font-size: 1.6rem;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.background-1 {
+  width: 100vw;
+  height: 100vh;
+  background: url("https://images.unsplash.com/photo-1629104300041-331cddce6ec5?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1500&q=80")
+    no-repeat center right / cover;
+}
+.images {
+  width: 40rem;
+  height: 40rem;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.link {
+  text-decoration: none;
+  margin-top: 2rem;
+  padding: 1rem 5rem;
+  text-align: center;
+  color: white;
+  background-color: violet;
+}
+.link--rounded {
+  text-decoration: none;
+  margin-top: 2rem;
+  padding: 1rem 5rem;
+  text-align: center;
+  color: white;
+  background-color: violet;
+  border-radius: 4px;
+}
+.boxed-1 {
+  width: 20rem;
+  height: 20rem;
+  background-image: linear-gradient(to right bottom, #00aefd, #ffa400);
+  /*
+  direction: to right, to left, to bottom to top, to right bottom, to left bottom, to left top, to right top
+  120deg
+  color1
+  color2 
+   */
+}
+.title {
+  font-weight: bold;
+  font-size: 50px;
+  background-image: linear-gradient(to right bottom, #00aefd, #ffa400);
+  display: inline-block;
+  margin-top: 5rem;
+  margin-left: 10rem;
+  color: transparent;
+  -webkit-background-clip: text;
+  background-clip: text;
+}
+.background {
+  width: 100vw;
+  height: 100vh;
+  background-image: linear-gradient(
+      to right bottom,
+      rgba(0, 173, 253, 0.623),
+      rgba(255, 166, 0, 0.459)
+    ),
+    url("https://images.unsplash.com/photo-1629104300041-331cddce6ec5?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1500&q=80");
+  background-size: cover;
+}
+.text-gradient{
+  display: inline-block;
+  font-size: 10rem;
+  text-transform: uppercase;
+  font-weight: bold;
+  color:transparent;
+  -webkit-background-clip: text;
+  background-clip: text;
+  background-image: linear-gradient(to left, #FF4895, #FFD96A);
+  
+}
+.button{
+  display: inline-block;
+  padding: 1rem 3rem;
+  text-align: center;
+  border-radius:6px;
+  margin: 2rem;
+  color: white;
+  text-transform: uppercase;
+  background-image: linear-gradient(to left, #50cfc6, #68ecac);
+  box-shadow: 0 0 10px 0 rgba(104, 236, 172, 0.829);
+}
+.color__items{
+  width: 15rem;
+  height: 15rem;
+  margin-left: 10px;
+  border-radius: 8px;
+  margin-bottom: 10px;
+  display: inline-block;
+  transition: background-color 0.25s linear;
+}
+.color__items:first-child{
+  background-color: purple;
+}
+.color__items:nth-child(2){
+  background-color: yellow;
+}
+.color__items:nth-child(3){
+  background-color: blue;
+}
+.color__items:nth-child(4){
+  background-color: red;
+}
+.color__items:nth-child(5){
+  background-color: orange;
+}
+.color__items:last-child{
+  background-color: brown;
+}
+.color__items:not(:last-child){
+  background-color:#000;
+}
+.color__items + .color__items{
+  background-color:rgba(104, 236, 172);
+}
+.color__items ~ .color__items{
+  background-color:#2979ff;
+}
+.color__items:hover{
+  background-color: #FF4895;
+}
